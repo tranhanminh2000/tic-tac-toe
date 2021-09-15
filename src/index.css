@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Fredoka One', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  background:  url("./image/etp.jpg"),linear-gradient(180deg , rgb(71, 70, 70), rgb(19, 19, 19));
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+#root h1{
+  text-align: center  ;
+}
+#root h1 .title{
+  font-family: 'Fredoka One', cursive;
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 10px red,
+  0 0 20px red,
+  0 0 50px red,
+  0 0 120px red;
+  position: relative;
+}
+
+#root h1 .title:first-child:after{
+  /* transform: rotate( 
+-30deg); */
+transform: skew(20deg);
+    right: 58px;
+    content: "X";
+    position: absolute;
+    bottom: -50px;
+    font-size: 30px;
+}
+#root h1 .title:first-child::before{
+  transform: skew(-20deg);
+  z-index: 999;
+    right: 27px;
+    content: "O";
+    position: absolute;
+    bottom: -65px;
+    text-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 50px blue, 0 0 120px blue;
+    font-size: 30px;
+}
+
+#root h1 #break-word{
+  font-family: 'Fredoka One', cursive;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  animation-name: break-word;
+  animation-timing-function: ease-in;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes break-word {
+  0% {
+    color: #888;
+    text-shadow: none;
+  }
+  1%{
+    color: white;
+    text-shadow: 0 0 10px red,
+    0 0 20px red,
+    0 0 50px red,
+    0 0 120px red;
+  }
+  2%{
+    color: #888;
+    text-shadow: none;
+  }
+  4% {
+    color: white;
+    text-shadow: 0 0 10px red,
+    0 0 20px red,
+    0 0 50px red,
+    0 0 120px red;
+  }
+  10%{
+    color: #888;
+    text-shadow: none;
+  }
+  100% {
+    color: #888;
+    text-shadow: none;  
+  }
+}
+
+.App{
+  height: 380px;
+  margin-top: 100px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  padding: 0 200px;
+}
+
+/* .App header{
+
+} */
+.App .game{
+} 
+
+.App .game header,
+.App .control header{
+  color: white;
+  padding-bottom: 10px;
+  font-size: 20px;
+  text-align: center;
+} 
+
+.App .control{
+  width: 362px;
+}
+
+.App .control ol{
+  padding-left: 0px;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.App .control ol li{
+  text-align: center;
+  display: inline-block;
+  flex : 1 1 30px;
+  margin: 20px;
+  list-style: none;
+}
+
+.App .control .btn{
+  font-family: 'Fredoka One', cursive;
+  padding: 5px 20px;
+  color: white;
+  background: transparent;
+  border: 5px solid #46FCFC;
+  box-shadow: 0 0 5px #11BFFC;
+  border-radius: 10px;
+}
+
+.App .control .btn:active{
+  opacity: 0.7;
+}
+
+.App .game .Board{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding: 20px;
+  border: 5px solid #46FCFC;
+  box-shadow: 0 0 5px #11BFFC;
+  position: relative;
+}
+
+
+.App .game .Board .row{
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  
+}
+
+.App .game .Board .row .Square{
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  margin: 2px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 100px;
+  font-size: 70px;
+  font-weight: bold;
+  font-family: 'Fredoka One', cursive;
+  color: white;
+  text-shadow: 0 0 10px blue,
+  0 0 20px blue,
+  0 0 40px blue,
+  0 0 60px blue;
+  animation-name: boardcolor;
+  animation-timing-function: linear;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+} 
+
+@keyframes boardcolor {
+  0%{
+    box-shadow: 0 0 10px blue;
+  }
+  25%{
+    box-shadow: 0 0 10px rgb(35, 35, 245);
+  }
+  50%{
+    box-shadow: 0 0 10px rgb(238, 35, 136);
+  }
+  100%{
+    box-shadow: 0 0 10px red;
+  }
+}
